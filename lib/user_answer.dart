@@ -1,5 +1,7 @@
 import 'dart:io';
 
+/// Asks the user if the answer is correct 
+/// and if not, allows them to modify it
 isApproved(varToApprove) {
   print('Your answer was $varToApprove. Is it correct? (Y/n)');
   String? userApproval = stdin.readLineSync();
@@ -19,6 +21,8 @@ isApproved(varToApprove) {
   return varToApprove;
 }
 
+/// Checks that the user answered the question 
+/// and that the answer could be convert to an integer
 isChecked(varToCheck) {
   if (varToCheck?.isEmpty ?? true) {
     do {
