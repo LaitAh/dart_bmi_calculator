@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:bmi_calculator/bmi_calculator.dart';
+
 void main(List<String> arguments) {
   int? weight;
   int? height;
@@ -23,10 +25,7 @@ void main(List<String> arguments) {
 
   // BMI
   print('Thank you $name for your answer. We recorded your weight is $weight and your height is $height. We will now proceed to calculate your BMI...');
-  int heightSquared = height! * height;
-  bmi = weight! / heightSquared;
-  bmi = double.parse((bmi * 10000).toStringAsFixed(1));
-
+  bmi = calculateBmi(weight, height);
   print('Your BMI is $bmi.');
   print('Thank your for using our app! Hope to see you soon, $name.');
 }
