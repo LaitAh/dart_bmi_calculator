@@ -26,6 +26,10 @@ void main(List<String> arguments) {
   // BMI
   print('Thank you $name for your answer. We recorded your weight is $weight and your height is $height. We will now proceed to calculate your BMI...');
   bmi = calculateBmi(weight, height);
-  print('Your BMI is $bmi.');
+  print('Your BMI is $bmi. Do you want to know what this corresponds to according to the WHO (World Health Organization)? (Y/n)');
+  String? whoInput = stdin.readLineSync();
+  if (whoInput == 'Y') {
+    print(whoClassification(bmi));
+  }
   print('Thank your for using our app! Hope to see you soon, $name.');
 }
